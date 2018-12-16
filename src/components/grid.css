@@ -1,0 +1,14 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+}
+
+.boxes{
+    height: 40px;
+    width: 40px;
+    border: 1px solid gray;
+    padding: 5px;
+}
