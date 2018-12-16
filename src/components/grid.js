@@ -13,6 +13,7 @@ return(
 
                 <div className='boxes'id={index}>
                     y: {indexRow} x: {index}
+                    {props.dir}
                 </div>
                 
                 )}

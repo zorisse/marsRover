@@ -3,7 +3,7 @@ import Grid from './components/grid.js'
 import './pp.css'
 
 class App extends Component {
-  state={
+  state= {
    arrayGrid : [
       [null, null, null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null, null, null],
@@ -15,14 +15,38 @@ class App extends Component {
       [null, null, null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null, null, null],
-    ]
+    ],
+    Rover : {
+      direction: "N",
+      x: 0,
+      y: 0,
+      travellog: []
+    }
     
   }
+
+ turnleft = () =>{
+   var directions = this.state.Rover.direction;
+   if(directions === "N"){
+     directions ="S";
+   }
+   this.setState({
+    Rover : {
+      direction: directions,
+      x: 0,
+      y: 0,
+      travellog: []
+    }
+   })
+ }
+   
+
+
   render() {
-    
     return (
       <div className='pp'>
-        <Grid  boxes={this.state.arrayGrid}    />
+      <button  onClick={this.turnleft} >turnLeft</button>
+        <Grid  boxes={this.state.arrayGrid}    dir={this.state.Rover.direction}/>
       </div>
     );
   }
