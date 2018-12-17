@@ -47,13 +47,13 @@ function turnLeft(rover) {
 function turnRight(rover) {
   console.log("turnRight was called!");
   var actualDirection = rover.direction;
-  if (actualDirection == "N") {
+  if (actualDirection === "N") {
     rover.direction = "E";
-  } else if (actualDirection == "e") {
+  } else if (actualDirection === "e") {
     rover.direction = "S";
-  } else if (actualDirection == "S") {
+  } else if (actualDirection === "S") {
     rover.direction = "W";
-  } else if (actualDirection == "W") {
+  } else if (actualDirection === "W") {
     rover.direction = "N";
   }
   console.log(rover.direction);
