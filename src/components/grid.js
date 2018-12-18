@@ -2,22 +2,33 @@ import React from 'react';
 import './grid.css';
 
 const Grid = (props) => {
-const row = props.boxes;
+const grid = props.boxes;
 
 return(
-    row.map((e,indexRow)=> {
+    grid.map((row,indexRow)=> {
     return   ( 
         <div className='row'>
 
-            {e.map((ee, index)=>{return(
+            {row.map((ee, index)=>{
+                if (ee== null) {
+                    return(
+                        <div className='boxes'id={index}>
+                            y: {indexRow} x: {index}
+                            {props.dir}
+                        </div>
+                        
+                        )
+                } else {
+                    return(
+                        <div className='boxes'id={index}>
+                           lapinou
+                        </div>
+                        
+                        )
+                }
+                }
+            )}
 
-                <div className='boxes'id={index}>
-                    y: {indexRow} x: {index}
-            
-                </div>
-                
-                )}
-            )} 
         </div>
         )
     })
