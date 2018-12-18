@@ -117,15 +117,16 @@ class App extends Component {
       <div className='pp'>
               <p>
           Rover : 
-          - X :{this.state.Rover.x}
-          - y :{this.state.Rover.y}
+          - X :{this.state.Rover.x}    
+          - y :{this.state.Rover.y} ======>    
+          direction : {this.state.Rover.direction}
         </p>
 
       <button  onClick={this.turnLeft} >turnLeft</button>
       <button  onClick={this.turnRight} >turnRight</button>
       <button  onClick={this.moveFoward} >Move Forward</button>
 
-        <Grid  boxes={this.state.arrayGrid}    dir={this.state.Rover.direction}
+        <Grid  boxes={this.state.arrayGrid}  
                 
         />
 
