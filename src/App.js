@@ -73,7 +73,7 @@ class App extends Component {
 
     const roverTemp = { ...this.state.Rover
     };
-    const arrayGridTemp = {...this.state.arrayGrid};
+    const arrayGridTemp = this.state.arrayGrid;
     var messageAlertTemp = this.state.messageAlert; 
     switch (roverTemp.direction) {
       case "N":
@@ -113,6 +113,7 @@ class App extends Component {
     this.setState({
       Rover: { ...roverTemp
       }, 
+      arrayGrid: arrayGridTemp,
       messageAlert: messageAlertTemp, 
     })
   }
