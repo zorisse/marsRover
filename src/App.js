@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
-import Grid from './components/grid.js'
-import './pp.css'
-import Buttons from './components/button.js'
-import Message from './components/message.js'
+import Grid from './components/grid2.js';
+import './pp.css';
+import Buttons from './components/button.js';
+import Message from './components/message.js';
+
+
+
+
+
 
 class App extends Component {
   state = {
@@ -70,10 +75,22 @@ class App extends Component {
   // Move Foward 
 
   moveFoward = () => {
+    let arrayGridEmpty = [
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null],
+    ];
 
-    const roverTemp = { ...this.state.Rover
-    };
-    const arrayGridTemp = this.state.arrayGrid;
+    const roverTemp = { ...this.state.Rover};
+    console.log(arrayGridEmpty);
+    let arrayGridTemp = arrayGridEmpty;
     var messageAlertTemp = this.state.messageAlert; 
     switch (roverTemp.direction) {
       case "N":
@@ -109,13 +126,20 @@ class App extends Component {
         default:console.log("OOPS je n'ai pas prévu ce scénario");
     }
 
-    arrayGridTemp[roverTemp.y][roverTemp.x]= "ROVER"
+    arrayGridTemp[roverTemp.y][roverTemp.x]= "ROVER";
+
+    //console.log(arrayGridTemp);
+
     this.setState({
       Rover: { ...roverTemp
       }, 
       arrayGrid: arrayGridTemp,
       messageAlert: messageAlertTemp, 
     })
+
+    arrayGridTemp= arrayGridEmpty;
+    console.log(arrayGridEmpty);
+    console.log(arrayGridTemp);
   }
 
 
@@ -142,7 +166,7 @@ class App extends Component {
         
 
         <div>
-          <Buttons turnleft={this.turnLeft} turnRight={this.turnRight} moveFoward={this.moveFoward} />
+          <Buttons turnLeft={this.turnLeft} turnRight={this.turnRight} moveFoward={this.moveFoward} />
         </div>
         <div>
         <Grid  boxes={this.state.arrayGrid}    dir={this.state.Rover.direction}/>
