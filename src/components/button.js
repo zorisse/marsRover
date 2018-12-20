@@ -4,6 +4,9 @@ const styleButton ={
     fontFamily:'Orbitron',
     margin: '8px',
     padding: '8px',
+    color:'#12e80b',
+    background:'#7c090d',
+    fontWeight:'bold'
 }
 
 

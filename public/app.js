@@ -53,7 +53,7 @@ function turnRight(rover) {
     rover.direction = "S";
   } else if (actualDirection === "S") {
     rover.direction = "W";
-  } else if (actualDirection === "W") {
+  } else if (actualDirection == "W") {
     rover.direction = "N";
   }
   console.log(rover.direction);

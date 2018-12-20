@@ -148,7 +148,7 @@ class App extends Component {
     return (
       <div className='pp' style={{display: 'flex' , flexDirection: 'column', border:'1px solid red', justifyContent:'center', margin:'5%', padding:'2%'}}>
 
-         <div style={{textAlign:'center'}}>
+         <div style={{textAlign:'center', fontWeight:'bold', fontSize:'large', border:'2px solid #12e80b'}}>
          <p >
           Rover : 
           - X :{this.state.Rover.x}
