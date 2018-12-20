@@ -1,4 +1,11 @@
+
+
+
 .pp{
+    font-family: 'Orbitron', sans-serif;
+    font-size: small;
+    color: darkgreen;
+    background-color: black; 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
