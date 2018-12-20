@@ -87,11 +87,13 @@ class App extends Component {
       [null, null, null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null, null, null],
     ];
-
+    this.setState({
+      messageAlert: null
+    })
     const roverTemp = { ...this.state.Rover};
     console.log(arrayGridEmpty);
     let arrayGridTemp = arrayGridEmpty;
-    var messageAlertTemp = this.state.messageAlert; 
+    var messageAlertTemp = null; 
     switch (roverTemp.direction) {
       case "N":
         // si y =0 ne ignorer la commande 
@@ -102,14 +104,14 @@ class App extends Component {
         }
         break;
       case "S":
-        if (roverTemp.y !== 10) {
+        if (roverTemp.y !== 9) {
           roverTemp.y += 1;
         } else {
           messageAlertTemp ="Vous avez atteint la frontière Sud, vous ne pouvez pas aller plus loin";
         }
         break;
       case "E":
-        if (roverTemp.x !== 10) {
+        if (roverTemp.x !== 9) {
           roverTemp.x += 1;
         } else {
           messageAlertTemp ="Vous avez atteint la frontière Est, vous ne pouvez pas aller plus loin";
@@ -128,8 +130,6 @@ class App extends Component {
 
     arrayGridTemp[roverTemp.y][roverTemp.x]= "ROVER";
 
-    //console.log(arrayGridTemp);
-
     this.setState({
       Rover: { ...roverTemp
       }, 
@@ -138,8 +138,7 @@ class App extends Component {
     })
 
     arrayGridTemp= arrayGridEmpty;
-    console.log(arrayGridEmpty);
-    console.log(arrayGridTemp);
+   
   }
 
 

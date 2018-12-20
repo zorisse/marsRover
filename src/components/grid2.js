@@ -17,13 +17,14 @@ return(
                 } else if (ee ==='ROVER') {
                     rov = 'ROVER';
                     style = {
-                        backgroundColor: 'green',
-                        color:'red'
+                        backgroundColor: 'darkgreen',
+                        color:'red',
+                        textAlign: 'center'
                     };
                 }
                 return(
                     <div className='boxes'id={index} style={style} >
-                             {rov}
+                            <p>{rov} </p> 
                     </div>
                 )
                 }
